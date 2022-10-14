@@ -204,26 +204,26 @@ function resGame() {
     // // let removeClasses = ["gegner", "dead", "showing", "shooting"];
     // document.querySelectorAll("div").classList.toggle("gegner", "dead", "showing", "shooting");
     killAll();
-    enem1.classList.remove("gegner", "dead", "showing", "shooting");
-    enem2.classList.remove("gegner", "dead", "showing", "shooting");
-    enem3.classList.remove("gegner", "dead", "showing", "shooting");
-    enem4.classList.remove("gegner", "dead", "showing", "shooting");
-    enem5.classList.remove("gegner", "dead", "showing", "shooting");
-    enem6.classList.remove("gegner", "dead", "showing", "shooting");
-    enem7.classList.remove("gegner", "dead", "showing", "shooting");
-    enem8.classList.remove("gegner", "dead", "showing", "shooting");
-    enem9.classList.remove("gegner", "dead", "showing", "shooting");
-    enem10.classList.remove("gegner", "dead", "showing", "shooting");
-    enem11.classList.remove("gegner", "dead", "showing", "shooting");
-    enem12.classList.remove("gegner", "dead", "showing", "shooting");
-    enem13.classList.remove("gegner", "dead", "showing", "shooting");
-    enem14.classList.remove("gegner", "dead", "showing", "shooting");
-    enem15.classList.remove("gegner", "dead", "showing", "shooting");
-    enem16.classList.remove("gegner", "dead", "showing", "shooting");
-    enem17.classList.remove("gegner", "dead", "showing", "shooting");
-    enem18.classList.remove("gegner", "dead", "showing", "shooting");
-    enem19.classList.remove("gegner", "dead", "showing", "shooting");
-    enem20.classList.remove("gegner", "dead", "showing", "shooting");
+    enem1.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem2.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem3.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem4.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem5.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem6.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem7.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem8.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem9.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem10.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem11.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem12.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem13.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem14.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem15.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem16.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem17.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem18.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem19.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem20.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
     document.getElementById("buttons").classList.add("sichtbar");
     document.getElementById("buttons").classList.remove("nichtsichtbar");
     document.getElementById("whilePlay").classList.remove("sichtbar");
@@ -235,8 +235,12 @@ function resGame() {
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
-    return;
-    ;
+    easyButton.classList.remove("selected");;
+    medButton.classList.remove("selected");;
+    hardButton.classList.remove("selected");;
+    ultraHardButton.classList.remove("selected");;
+    document.getElementById("displayschw").innerHTML = "Bitte wähle eine Schwierigkeit";;
+
 
 }
 
