@@ -16,8 +16,9 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: #2B2C2E;
-
+    /* background: #2B2C2E; */
+    background-image: url("https://images.gutefrage.net/media/fragen/bilder/ist-die-drachenschanze-deutsches-kulturgut/0_full.jpg?v=1553079806000");
+    background-size: cover;
 }
 
 
@@ -226,6 +227,7 @@ button:hover {
 #anleitung {
     position: absolute;
     ;
+    font-size: 15px;
     right: 0px;
 }
 

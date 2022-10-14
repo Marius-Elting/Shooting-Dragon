@@ -211,6 +211,7 @@ function easy() {
     medButton.classList.remove("selected");
     hardButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
+    ultraHardPlusButton.classList.remove("selected");
     customGame.classList.remove("selected");
     document.getElementById("eigeneSettings").classList.remove("sichtbar");
     document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
@@ -245,6 +246,7 @@ function medium() {
 function hard() {
     medium();
     anzahlReset();
+    anzahllvl4();
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Hard";
     // document.getElementById("start").onclick = "hardest";
     hardButton.classList.add("selected");
@@ -402,6 +404,7 @@ function eigenesSpiel() {
     medButton.classList.remove("selected");
     hardButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
+    ultraHardPlusButton.classList.remove("selected");
     customGame.classList.add("selected");
     leben = 100;
     document.getElementById("health").innerHTML = leben;
