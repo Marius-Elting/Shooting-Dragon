@@ -15,7 +15,7 @@
 <body>
     <form action="">
         <div id="gameFrame" class="gFrame">
-            <h1 id="mby">Made by Marius :) v0.3.3</h1>
+            <h1 id="mby">Made by Marius :) v0.4</h1>
             <div id="healthBar">
                 <h1><span id="health"></span>/100 </h1>
             </div>
@@ -53,12 +53,39 @@
         <h2 id="displayschw"> Bitte wähle eine Schwierigkeit</h2>
 
         <div class="schwierigkeit">
-            <button id="easyButton" onclick="easy()">Easy</button>
-            <button id="medButton" onclick="medium()">Medium</button>
-            <button id="hardButton" onclick="hard()">Hard</button>
-            <button id="ultraHardButton" onclick="ultraHard()">Ultra Hard</button>
-            <button id="ultraHardPlusButton" onclick="ultraHardPlus()">Ultra Hard+</button>
+            <div>
+                <button id="easyButton" onclick="easy()">Easy</button>
+                <button id="medButton" onclick="medium()">Medium</button>
+                <button id="hardButton" onclick="hard()">Hard</button>
+                <button id="ultraHardButton" onclick="ultraHard()">Ultra Hard</button>
+                <button id="ultraHardPlusButton" onclick="ultraHardPlus()">Ultra Hard+</button>
+                <button id="eigenesSpielButton" onclick="eigenesSpiel()">custom</button>
+            </div>
+            <div id="eigeneSettings" class="nichtsichtbar">
+                <h2>Schuss verzögerung</h2>
+                <div id="shootTimeSetting">
+                    <button id="shootLVL1" onclick="shootLVL1()">LvL1</button>
+                    <button id="shootLVL2" onclick="shootLVL2()">LvL2</button>
+                    <button id="shootLVL3" onclick="shootLVL3()">LvL3</button>
+                    <button id="shootLVL4" onclick="shootLVL4()">LvL4</button>
+                </div>
+                <h2>Spawn verzögerung</h2>
+                <div id="spawnTimeSetting">
+                    <button id="spawnLVL1" onclick="spawnLVL1()">LvL1</button>
+                    <button id="spawnLVL2" onclick="spawnLVL2()">LvL2</button>
+                    <button id="spawnLVL3" onclick="spawnLVL3()">LvL3</button>
+                    <button id="spawnLVL4" onclick="spawnLVL4()">LvL4</button>
+                    <button id="spawnLVL5" onclick="spawnLVL5()">Unmöglich</button>
 
+                </div>
+                <h2>Anzahl der Gegner</h2>
+                <div id="gegnerAnzahlSetting">
+                    <button id="gegnerLVL1" onclick="gegnerLVL1()">5</button>
+                    <button id="gegnerLVL2" onclick="gegnerLVL2()">8</button>
+                    <button id="gegnerLVL3" onclick="gegnerLVL3()">11</button>
+                    <button id="gegnerLVL4" onclick="gegnerLVL4()">20</button>
+                </div>
+            </div>
         </div>
 
         <button id="start" onclick="randomGegner()">

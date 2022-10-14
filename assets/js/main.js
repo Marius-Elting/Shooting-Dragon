@@ -4,6 +4,7 @@ let medButton = document.getElementById('medButton');
 let hardButton = document.getElementById('hardButton');
 let ultraHardButton = document.getElementById('ultraHardButton');
 let ultraHardPlusButton = document.getElementById('ultraHardPlusButton');
+let customGame = document.getElementById('eigenesSpielButton');
 
 
 
@@ -114,6 +115,8 @@ function randomGegner() {
         document.getElementById("buttons").classList.remove("sichtbar");
         document.getElementById("whilePlay").classList.remove("nichtsichtbar");
         document.getElementById("whilePlay").classList.add("sichtbar");
+        document.getElementById("eigeneSettings").classList.remove("sichtbar");
+        document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
         // leben = 100;
         // document.getElementById("health").innerHTML = leben;
         // healthBar.style.width = "100%";
@@ -133,26 +136,7 @@ function resGame() {
     // // let removeClasses = ["gegner", "dead", "showing", "shooting"];
     // document.querySelectorAll("div").classList.toggle("gegner", "dead", "showing", "shooting");
     killAll();
-    enem1.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem2.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem3.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem4.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem5.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem6.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem7.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem8.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem9.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem10.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem11.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem12.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem13.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem14.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem15.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem16.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem17.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem18.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem19.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
-    enem20.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    anzahlReset();
     document.getElementById("buttons").classList.add("sichtbar");
     document.getElementById("buttons").classList.remove("nichtsichtbar");
     document.getElementById("whilePlay").classList.remove("sichtbar");
@@ -221,31 +205,15 @@ let enem20 = document.getElementById("gegner20");
 // Buttons für die Schwierigkeits buttons
 
 function easy() {
-    enem1.classList.add("gegner");
-    enem2.classList.add("gegner");
-    enem3.classList.add("gegner");
-    enem4.classList.add("gegner");
-    enem5.classList.add("gegner");
-    enem6.classList.remove("gegner");
-    enem7.classList.remove("gegner");
-    enem8.classList.remove("gegner");
-    enem9.classList.remove("gegner");
-    enem10.classList.remove("gegner");
-    enem11.classList.remove("gegner");
-    enem12.classList.remove("gegner");
-    enem13.classList.remove("gegner");
-    enem14.classList.remove("gegner");
-    enem15.classList.remove("gegner");
-    enem16.classList.remove("gegner");
-    enem17.classList.remove("gegner");
-    enem18.classList.remove("gegner");
-    enem19.classList.remove("gegner");
-    enem20.classList.remove("gegner");
+    anzahllvl1();
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Easy";
     easyButton.classList.add("selected");
     medButton.classList.remove("selected");
     hardButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
+    customGame.classList.remove("selected");
+    document.getElementById("eigeneSettings").classList.remove("sichtbar");
+    document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
 
     leben = 100;
     document.getElementById("health").innerHTML = leben;
@@ -256,27 +224,16 @@ function easy() {
 
 function medium() {
     easy();
-    enem6.classList.add("gegner");
-    enem7.classList.add("gegner");
-    enem8.classList.add("gegner");
-    enem9.classList.remove("gegner");
-    enem10.classList.remove("gegner");
-    enem11.classList.remove("gegner");
-    enem12.classList.remove("gegner");
-    enem13.classList.remove("gegner");
-    enem14.classList.remove("gegner");
-    enem15.classList.remove("gegner");
-    enem16.classList.remove("gegner");
-    enem17.classList.remove("gegner");
-    enem18.classList.remove("gegner");
-    enem19.classList.remove("gegner");
-    enem20.classList.remove("gegner");
+    anzahllvl2();
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Medium";
     medButton.classList.add("selected");
     easyButton.classList.remove("selected");
     hardButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
     ultraHardPlusButton.classList.remove("selected");;
+    customGame.classList.remove("selected");
+    document.getElementById("eigeneSettings").classList.remove("sichtbar");
+    document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
@@ -287,27 +244,19 @@ function medium() {
 
 function hard() {
     medium();
-    enem9.classList.add("gegner");
-    enem10.classList.add("gegner");
-    enem11.classList.add("gegner");
+    anzahlReset();
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Hard";
     // document.getElementById("start").onclick = "hardest";
     hardButton.classList.add("selected");
     medButton.classList.remove("selected");
     easyButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
+    customGame.classList.remove("selected");
+    document.getElementById("eigeneSettings").classList.remove("sichtbar");
+    document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
-    enem12.classList.remove("gegner");
-    enem13.classList.remove("gegner");
-    enem14.classList.remove("gegner");
-    enem15.classList.remove("gegner");
-    enem16.classList.remove("gegner");
-    enem17.classList.remove("gegner");
-    enem18.classList.remove("gegner");
-    enem19.classList.remove("gegner");
-    enem20.classList.remove("gegner");
     shotDelay = 650;
     malvar = 1000;
     plusvar = 100;
@@ -315,6 +264,111 @@ function hard() {
 
 function ultraHard() {
     hard();
+    anzahllvl4();
+    document.getElementById("displayschw").innerHTML = "Schwierigkeit: Ultra Hard";
+    hardButton.classList.remove("selected");
+    medButton.classList.remove("selected");
+    easyButton.classList.remove("selected");
+    ultraHardButton.classList.add("selected");
+    ultraHardPlusButton.classList.remove("selected");;
+    customGame.classList.remove("selected");
+    document.getElementById("eigeneSettings").classList.remove("sichtbar");
+    document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
+
+    leben = 100;
+    document.getElementById("health").innerHTML = leben;
+    healthBar.style.width = "100%";
+    shotDelay = 600;
+    malvar = 650;
+    plusvar = 300;
+}
+
+function ultraHardPlus() {
+    anzahllvl4();
+    document.getElementById("displayschw").innerHTML = "Schwierigkeit: Ultra Hard+";
+    hardButton.classList.remove("selected");
+    medButton.classList.remove("selected");
+    easyButton.classList.remove("selected");
+    ultraHardButton.classList.remove("selected");
+    ultraHardPlusButton.classList.add("selected");;
+    customGame.classList.remove("selected");
+    document.getElementById("eigeneSettings").classList.remove("sichtbar");
+    document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
+    leben = 100;
+    document.getElementById("health").innerHTML = leben;
+    healthBar.style.width = "100%";
+    shotDelay = 500;
+    malvar = 300;
+    plusvar = 300;
+}
+
+function anleitung() {
+    alert("Töte die Gegner in dem du sie anklickst, doch pass auf sie schießen zurück, halte deshalb deine Leben immer gut im Auge");
+}
+
+function anzahlReset() {
+    enem1.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem2.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem3.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem4.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem5.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem6.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem7.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem8.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem9.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem10.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem11.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem12.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem13.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem14.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem15.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem16.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem17.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem18.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem19.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+    enem20.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
+}
+
+
+function anzahllvl1() {
+    anzahlReset();
+    enem1.classList.add("gegner");
+    enem2.classList.add("gegner");
+    enem3.classList.add("gegner");
+    enem4.classList.add("gegner");
+    enem5.classList.add("gegner");
+}
+
+function anzahllvl2() {
+    anzahlReset();
+    enem1.classList.add("gegner");
+    enem2.classList.add("gegner");
+    enem3.classList.add("gegner");
+    enem4.classList.add("gegner");
+    enem5.classList.add("gegner");
+    enem6.classList.add("gegner");
+    enem7.classList.add("gegner");
+    enem8.classList.add("gegner");
+}
+
+function anzahllvl3() {
+    anzahlReset();
+    enem1.classList.add("gegner");
+    enem2.classList.add("gegner");
+    enem3.classList.add("gegner");
+    enem4.classList.add("gegner");
+    enem5.classList.add("gegner");
+    enem6.classList.add("gegner");
+    enem7.classList.add("gegner");
+    enem8.classList.add("gegner");
+    enem9.classList.add("gegner");
+    enem10.classList.add("gegner");
+    enem11.classList.add("gegner");
+
+}
+
+function anzahllvl4() {
+    anzahlReset();
     enem1.classList.add("gegner", "gegnerSpawnFast");
     enem2.classList.add("gegner", "gegnerSpawnFast");
     enem3.classList.add("gegner", "gegnerSpawnFast");
@@ -335,39 +389,150 @@ function ultraHard() {
     enem18.classList.add("gegner", "gegnerSpawnFast");
     enem19.classList.add("gegner", "gegnerSpawnFast");
     enem20.classList.add("gegner", "gegnerSpawnFast");
-    document.getElementById("displayschw").innerHTML = "Schwierigkeit: Ultra Hard";
-    hardButton.classList.remove("selected");
-    medButton.classList.remove("selected");
-    easyButton.classList.remove("selected");
-    ultraHardButton.classList.add("selected");
-    ultraHardPlusButton.classList.remove("selected");;
 
-    leben = 100;
-    document.getElementById("health").innerHTML = leben;
-    healthBar.style.width = "100%";
-    shotDelay = 500;
-    malvar = 600;
-    plusvar = 100;
 }
 
 
-function anleitung() {
-    alert("Töte die Gegner in dem du sie anklickst, doch pass auf sie schießen zurück, halte deshalb deine Leben immer gut im Auge");
-}
+function eigenesSpiel() {
+    document.getElementById("displayschw").innerHTML = "Schwierigkeit: Custom";
 
-
-function ultraHardPlus() {
-    ultraHard();
-    document.getElementById("displayschw").innerHTML = "Schwierigkeit: Ultra Hard+";
-    hardButton.classList.remove("selected");
-    medButton.classList.remove("selected");
+    document.getElementById("eigeneSettings").classList.add("sichtbar");
+    document.getElementById("eigeneSettings").classList.remove("nichtsichtbar");
     easyButton.classList.remove("selected");
+    medButton.classList.remove("selected");
+    hardButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
-    ultraHardPlusButton.classList.add("selected");;
+    customGame.classList.add("selected");
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
+}
+
+let gegnerLVL1Button = document.getElementById('gegnerLVL1');
+let gegnerLVL2Button = document.getElementById('gegnerLVL2');
+let gegnerLVL3Button = document.getElementById('gegnerLVL3');
+let gegnerLVL4Button = document.getElementById('gegnerLVL4');
+
+function gegnerLVL1() {
+    anzahllvl1();
+    gegnerLVL1Button.classList.add("selected");
+    gegnerLVL2Button.classList.remove("selected");
+    gegnerLVL3Button.classList.remove("selected");
+    gegnerLVL4Button.classList.remove("selected");
+}
+function gegnerLVL2() {
+    anzahllvl2();
+    gegnerLVL1Button.classList.remove("selected");
+    gegnerLVL2Button.classList.add("selected");
+    gegnerLVL3Button.classList.remove("selected");
+    gegnerLVL4Button.classList.remove("selected");
+}
+function gegnerLVL3() {
+    anzahllvl3();
+    gegnerLVL1Button.classList.remove("selected");
+    gegnerLVL2Button.classList.remove("selected");
+    gegnerLVL3Button.classList.add("selected");
+    gegnerLVL4Button.classList.remove("selected");
+}
+function gegnerLVL4() {
+    anzahllvl4();
+    gegnerLVL1Button.classList.remove("selected");
+    gegnerLVL2Button.classList.remove("selected");
+    gegnerLVL3Button.classList.remove("selected");
+    gegnerLVL4Button.classList.add("selected");
+}
+
+//!                  Shoot Rate
+
+let shootLVL1Button = document.getElementById('shootLVL1');
+let shootLVL2Button = document.getElementById('shootLVL2');
+let shootLVL3Button = document.getElementById('shootLVL3');
+let shootLVL4Button = document.getElementById('shootLVL4');
+
+function shootLVL1() {
+    shotDelay = 1000;
+    shootLVL1Button.classList.add("selected");
+    shootLVL2Button.classList.remove("selected");
+    shootLVL3Button.classList.remove("selected");
+    shootLVL4Button.classList.remove("selected");
+
+}
+function shootLVL2() {
+    shotDelay = 750;
+    shootLVL1Button.classList.remove("selected");
+    shootLVL2Button.classList.add("selected");
+    shootLVL3Button.classList.remove("selected");
+    shootLVL4Button.classList.remove("selected");
+}
+function shootLVL3() {
+    shotDelay = 600;
+    shootLVL1Button.classList.remove("selected");
+    shootLVL2Button.classList.remove("selected");
+    shootLVL3Button.classList.add("selected");
+    shootLVL4Button.classList.remove("selected");
+}
+function shootLVL4() {
     shotDelay = 500;
+    shootLVL1Button.classList.remove("selected");
+    shootLVL2Button.classList.remove("selected");
+    shootLVL3Button.classList.remove("selected");
+    shootLVL4Button.classList.add("selected");
+}
+
+//!                  Spawn Rate
+
+let spawnLVL1Button = document.getElementById('spawnLVL1');
+let spawnLVL2Button = document.getElementById('spawnLVL2');
+let spawnLVL3Button = document.getElementById('spawnLVL3');
+let spawnLVL4Button = document.getElementById('spawnLVL4');
+let spawnLVL5Button = document.getElementById('spawnLVL5');
+
+
+function spawnLVL1() {
+    let malvar = 1000;
+    let plusvar = 500;
+    spawnLVL1Button.classList.add("selected");
+    spawnLVL2Button.classList.remove("selected");
+    spawnLVL3Button.classList.remove("selected");
+    spawnLVL4Button.classList.remove("selected");
+    spawnLVL5Button.classList.remove("selected");
+
+
+}
+function spawnLVL2() {
+    malvar = 750;
+    plusvar = 500;
+    spawnLVL1Button.classList.remove("selected");
+    spawnLVL2Button.classList.add("selected");
+    spawnLVL3Button.classList.remove("selected");
+    spawnLVL4Button.classList.remove("selected");
+    spawnLVL5Button.classList.remove("selected");
+
+}
+function spawnLVL3() {
+    malvar = 650;
+    plusvar = 300;
+    spawnLVL1Button.classList.remove("selected");
+    spawnLVL2Button.classList.remove("selected");
+    spawnLVL3Button.classList.add("selected");
+    spawnLVL4Button.classList.remove("selected");
+    spawnLVL5Button.classList.remove("selected");
+}
+function spawnLVL4() {
     malvar = 300;
     plusvar = 300;
+    spawnLVL1Button.classList.remove("selected");
+    spawnLVL2Button.classList.remove("selected");
+    spawnLVL3Button.classList.remove("selected");
+    spawnLVL4Button.classList.add("selected");
+    spawnLVL5Button.classList.remove("selected");
+}
+function spawnLVL5() {
+    malvar = 200;
+    plusvar = 200;
+    spawnLVL1Button.classList.remove("selected");
+    spawnLVL2Button.classList.remove("selected");
+    spawnLVL3Button.classList.remove("selected");
+    spawnLVL4Button.classList.remove("selected");
+    spawnLVL5Button.classList.add("selected");
 }

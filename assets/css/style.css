@@ -173,6 +173,8 @@ button:hover {
     display: flex;
     justify-content: space-around;
     gap: 10px;
+    flex-direction: column;
+    ;
 }
 
 .schwierigkeit button {
@@ -225,4 +227,10 @@ button:hover {
     position: absolute;
     ;
     right: 0px;
+}
+
+#eigeneSettings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
