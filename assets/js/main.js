@@ -15,9 +15,12 @@ function updateHealthPoints(points) {
     document.getElementById("health").innerHTML = leben;
     if (leben < 1) {
         killAll();
-        alert("Du Looser!");
-        document.getElementById("resButton").classList.remove("nichtsichtbar");
-        document.getElementById("resButton").classList.add("sichtbar");        // window.location.reload();
+        setTimeout(() => {
+            alert("Du Looser!");
+            document.getElementById("resButton").classList.remove("nichtsichtbar");
+            document.getElementById("resButton").classList.add("sichtbar");
+        }, 500);
+        // window.location.reload();
         curScore = 0;
     }
 
@@ -40,9 +43,13 @@ function iShoot(gegner) {
     document.getElementById("curScore").innerHTML = curScore;
     document.getElementById("allScore").innerHTML = allScore;
     if (!lebendeGegner().length) {
-        alert("Du hast gewonnen! Und hast mit " + leben + " Leben überlebt!");
-        document.getElementById("resButton").classList.remove("nichtsichtbar");
-        document.getElementById("resButton").classList.add("sichtbar");
+        killAll();
+        setTimeout(() => {
+            alert("Du hast gewonnen! Und hast mit " + leben + " Leben überlebt!");
+            document.getElementById("resButton").classList.remove("nichtsichtbar");
+            document.getElementById("resButton").classList.add("sichtbar");
+        }, 500);
+
         // window.location.reload();
         curScore = 0;
     }
