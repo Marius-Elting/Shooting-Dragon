@@ -9,6 +9,7 @@ Mady by Marius */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select: none;
     -ms-user-select: none;
+    color: white;
 }
 
 body {
@@ -16,9 +17,10 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* background: #2B2C2E; */
-    background-image: url("https://images.gutefrage.net/media/fragen/bilder/ist-die-drachenschanze-deutsches-kulturgut/0_full.jpg?v=1553079806000");
-    background-size: cover;
+    background: #2B2C2E;
+    /* background-image: url("https://images.gutefrage.net/media/fragen/bilder/ist-die-drachenschanze-deutsches-kulturgut/0_full.jpg?v=1553079806000");
+    background-size: contain;
+    height: 100vh; */
 }
 
 

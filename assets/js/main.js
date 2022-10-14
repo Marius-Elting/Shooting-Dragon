@@ -330,7 +330,9 @@ function anzahlReset() {
     enem19.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
     enem20.classList.remove("gegner", "dead", "showing", "shooting", "gegnerSpawnFast");
 }
-
+//================================================================
+//!                  Anzahl functions
+//================================================================
 
 function anzahllvl1() {
     anzahlReset();
@@ -395,6 +397,9 @@ function anzahllvl4() {
 }
 
 
+//================================================================
+//!                  Custom Mode
+//================================================================
 function eigenesSpiel() {
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Custom";
 
@@ -410,11 +415,15 @@ function eigenesSpiel() {
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
 }
+//================================================================
+//!                  Anzahl Gegner
+//================================================================
 
 let gegnerLVL1Button = document.getElementById('gegnerLVL1');
 let gegnerLVL2Button = document.getElementById('gegnerLVL2');
 let gegnerLVL3Button = document.getElementById('gegnerLVL3');
 let gegnerLVL4Button = document.getElementById('gegnerLVL4');
+
 
 function gegnerLVL1() {
     anzahllvl1();
@@ -445,8 +454,10 @@ function gegnerLVL4() {
     gegnerLVL4Button.classList.add("selected");
 }
 
-//!                  Shoot Rate
 
+//================================================================
+//!                  Schuss Rate
+//================================================================
 let shootLVL1Button = document.getElementById('shootLVL1');
 let shootLVL2Button = document.getElementById('shootLVL2');
 let shootLVL3Button = document.getElementById('shootLVL3');
@@ -481,9 +492,9 @@ function shootLVL4() {
     shootLVL3Button.classList.remove("selected");
     shootLVL4Button.classList.add("selected");
 }
-
+//================================================================
 //!                  Spawn Rate
-
+//================================================================
 let spawnLVL1Button = document.getElementById('spawnLVL1');
 let spawnLVL2Button = document.getElementById('spawnLVL2');
 let spawnLVL3Button = document.getElementById('spawnLVL3');
