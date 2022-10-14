@@ -3,6 +3,10 @@ let easyButton = document.getElementById('easyButton');
 let medButton = document.getElementById('medButton');
 let hardButton = document.getElementById('hardButton');
 let ultraHardButton = document.getElementById('ultraHardButton');
+let ultraHardPlusButton = document.getElementById('ultraHardPlusButton');
+
+
+
 
 let leben = 100;
 document.getElementById("health").innerHTML = leben;
@@ -56,7 +60,7 @@ function iShoot(gegner) {
 
 };
 
-
+let shotDelay = 1000;
 function gegnerGreiftAn(gegner) {
 
     if (leben > 0) {
@@ -65,7 +69,7 @@ function gegnerGreiftAn(gegner) {
 
         setTimeout(() => {
             gegnerSchiesst(gegner);
-        }, 1000);
+        }, shotDelay);
 
         setTimeout(() => {
             gegner.classList.remove("showing");
@@ -92,6 +96,9 @@ function gegnerSchiesst(gegner) {
 
 }
 
+let malvar = 2000;
+let plusvar = 1000;
+
 
 function randomGegner() {
 
@@ -100,7 +107,7 @@ function randomGegner() {
     let gegner = lebendeGegner()[randomGegnerNo];
 
     let pruefen = document.getElementById("gegner1");
-    var randomDelay = Math.random() * 2000 + 1000;
+    var randomDelay = Math.random() * malvar + plusvar;
     // Prüft ob die Klasse gegner vorhanden ist
     if (document.getElementById("gegner1").classList[1] == "gegner") {
         document.getElementById("buttons").classList.add("nichtsichtbar");
@@ -119,92 +126,7 @@ function randomGegner() {
     }, randomDelay);
 }
 
-function hardest() {
 
-    let randomGegnerNo = Math.random() * lebendeGegner().length;
-    randomGegnerNo = Math.floor(randomGegnerNo);
-    let gegner = lebendeGegner()[randomGegnerNo];
-    let randomDelay = Math.random() * 1000 + 100;
-    // Prüft ob die Klasse gegner vorhanden ist
-    if (document.getElementById("gegner1").classList[1] == "gegner") {
-        document.getElementById("buttons").classList.add("nichtsichtbar");
-        document.getElementById("buttons").classList.remove("sichtbar");
-        document.getElementById("whilePlay").classList.remove("nichtsichtbar");
-        document.getElementById("whilePlay").classList.add("sichtbar");
-        // leben = 100;
-        // document.getElementById("health").innerHTML = leben;
-        // healthBar.style.width = "100%";
-    } else {
-        alert("Bitte wähle eine Schwierigkeit!");
-    }
-    setTimeout(() => {
-        gegnerGreiftAn(gegner);
-        hardest();
-    }, randomDelay);
-
-}
-function mediums() {
-
-    var randomGegnerNo = Math.random() * lebendeGegner().length;
-    randomGegnerNo = Math.floor(randomGegnerNo);
-    var gegner = lebendeGegner()[randomGegnerNo];
-    var randomDelay = Math.random() * 1000 + 500;
-    // Prüft ob die Klasse gegner vorhanden ist
-    if (document.getElementById("gegner1").classList[1] == "gegner") {
-        document.getElementById("buttons").classList.add("nichtsichtbar");
-        document.getElementById("buttons").classList.remove("sichtbar");
-        document.getElementById("whilePlay").classList.remove("nichtsichtbar");
-        document.getElementById("whilePlay").classList.add("sichtbar");
-        leben = 100;
-        document.getElementById("health").innerHTML = leben;
-        healthBar.style.width = "100%";
-
-
-    } else {
-        alert("Bitte wähle eine Schwierigkeit!");
-    }
-    setTimeout(() => {
-        gegnerGreiftAn(gegner);
-        mediums();
-    }, randomDelay);
-
-}
-
-function hardester() {
-    let randomGegnerNo = Math.random() * lebendeGegner().length;
-    randomGegnerNo = Math.floor(randomGegnerNo);
-    let gegner = lebendeGegner()[randomGegnerNo];
-    let randomDelay = Math.random() * 200 + 230;
-    // Prüft ob die Klasse gegner vorhanden ist
-    if (document.getElementById("gegner1").classList[1] == "gegner") {
-        document.getElementById("buttons").classList.add("nichtsichtbar");
-        document.getElementById("buttons").classList.remove("sichtbar");
-        document.getElementById("whilePlay").classList.remove("nichtsichtbar");
-        document.getElementById("whilePlay").classList.add("sichtbar");
-        // leben = 100;
-        // document.getElementById("health").innerHTML = leben;
-        // healthBar.style.width = "100%";
-    } else {
-        alert("Bitte wähle eine Schwierigkeit!");
-    }
-
-    setTimeout(() => {
-        gegnerGreiftAn(gegner);
-        hardester();
-    }, randomDelay);
-    // if (stop == 1) {
-    //     return;
-    // }
-    return;
-}
-
-// function stopGame() {
-//     if (stop == 1) {
-
-//     } else {
-//         break;
-//     }
-// }
 function resGame() {
     // let toRemove = document.querySelectorAll("div").classList.value;
     // console.log(toRemove[0]);
@@ -246,9 +168,8 @@ function resGame() {
     medButton.classList.remove("selected");;
     hardButton.classList.remove("selected");;
     ultraHardButton.classList.remove("selected");;
-    document.getElementById("displayschw").innerHTML = "Bitte wähle eine Schwierigkeit";;
-
-
+    document.getElementById("displayschw").innerHTML = "Bitte wähle eine Schwierigkeit";
+    shotDelay = 1000;
 }
 
 function killAll() {
@@ -321,8 +242,6 @@ function easy() {
     enem19.classList.remove("gegner");
     enem20.classList.remove("gegner");
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Easy";
-    document.getElementById("start").setAttribute("onClick", "javascript: randomGegner();");
-
     easyButton.classList.add("selected");
     medButton.classList.remove("selected");
     hardButton.classList.remove("selected");
@@ -331,6 +250,7 @@ function easy() {
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
+    shotDelay = 800;
 
 }
 
@@ -352,15 +272,17 @@ function medium() {
     enem19.classList.remove("gegner");
     enem20.classList.remove("gegner");
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Medium";
-    document.getElementById("start").setAttribute("onClick", "javascript: mediums();");
     medButton.classList.add("selected");
     easyButton.classList.remove("selected");
     hardButton.classList.remove("selected");
     ultraHardButton.classList.remove("selected");
-
+    ultraHardPlusButton.classList.remove("selected");;
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
+    shotDelay = 800;
+    malvar = 1000;
+    plusvar = 500;
 }
 
 function hard() {
@@ -370,7 +292,6 @@ function hard() {
     enem11.classList.add("gegner");
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Hard";
     // document.getElementById("start").onclick = "hardest";
-    document.getElementById("start").setAttribute("onClick", "javascript: hardest();");
     hardButton.classList.add("selected");
     medButton.classList.remove("selected");
     easyButton.classList.remove("selected");
@@ -387,11 +308,13 @@ function hard() {
     enem18.classList.remove("gegner");
     enem19.classList.remove("gegner");
     enem20.classList.remove("gegner");
-
+    shotDelay = 650;
+    malvar = 1000;
+    plusvar = 100;
 }
 
 function ultraHard() {
-    medium();
+    hard();
     enem1.classList.add("gegner", "gegnerSpawnFast");
     enem2.classList.add("gegner", "gegnerSpawnFast");
     enem3.classList.add("gegner", "gegnerSpawnFast");
@@ -413,20 +336,38 @@ function ultraHard() {
     enem19.classList.add("gegner", "gegnerSpawnFast");
     enem20.classList.add("gegner", "gegnerSpawnFast");
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Ultra Hard";
-    // document.getElementById("start").onclick = "hardest";
-    document.getElementById("start").setAttribute("onClick", "javascript: hardester();");
     hardButton.classList.remove("selected");
     medButton.classList.remove("selected");
     easyButton.classList.remove("selected");
     ultraHardButton.classList.add("selected");
+    ultraHardPlusButton.classList.remove("selected");;
+
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
+    shotDelay = 500;
+    malvar = 600;
+    plusvar = 100;
 }
-
-
 
 
 function anleitung() {
     alert("Töte die Gegner in dem du sie anklickst, doch pass auf sie schießen zurück, halte deshalb deine Leben immer gut im Auge");
+}
+
+
+function ultraHardPlus() {
+    ultraHard();
+    document.getElementById("displayschw").innerHTML = "Schwierigkeit: Ultra Hard+";
+    hardButton.classList.remove("selected");
+    medButton.classList.remove("selected");
+    easyButton.classList.remove("selected");
+    ultraHardButton.classList.remove("selected");
+    ultraHardPlusButton.classList.add("selected");;
+    leben = 100;
+    document.getElementById("health").innerHTML = leben;
+    healthBar.style.width = "100%";
+    shotDelay = 500;
+    malvar = 300;
+    plusvar = 300;
 }
