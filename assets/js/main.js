@@ -98,9 +98,9 @@ function randomGegner() {
         document.getElementById("buttons").classList.remove("sichtbar");
         document.getElementById("whilePlay").classList.remove("nichtsichtbar");
         document.getElementById("whilePlay").classList.add("sichtbar");
-        leben = 100;
-        document.getElementById("health").innerHTML = leben;
-        healthBar.style.width = "100%";
+        // leben = 100;
+        // document.getElementById("health").innerHTML = leben;
+        // healthBar.style.width = "100%";
     } else {
         alert("Bitte wähle eine Schwierigkeit!");
     }
@@ -122,9 +122,9 @@ function hardest() {
         document.getElementById("buttons").classList.remove("sichtbar");
         document.getElementById("whilePlay").classList.remove("nichtsichtbar");
         document.getElementById("whilePlay").classList.add("sichtbar");
-        leben = 100;
-        document.getElementById("health").innerHTML = leben;
-        healthBar.style.width = "100%";
+        // leben = 100;
+        // document.getElementById("health").innerHTML = leben;
+        // healthBar.style.width = "100%";
     } else {
         alert("Bitte wähle eine Schwierigkeit!");
     }
@@ -224,7 +224,9 @@ function easy() {
     easyButton.classList.add("selected");
     medButton.classList.remove("selected");
     hardButton.classList.remove("selected");
-
+    leben = 100;
+    document.getElementById("health").innerHTML = leben;
+    healthBar.style.width = "100%";
 
 }
 
@@ -241,6 +243,9 @@ function medium() {
     medButton.classList.add("selected");
     easyButton.classList.remove("selected");
     hardButton.classList.remove("selected");
+    leben = 100;
+    document.getElementById("health").innerHTML = leben;
+    healthBar.style.width = "100%";
 }
 
 function hard() {
@@ -254,6 +259,9 @@ function hard() {
     hardButton.classList.add("selected");
     medButton.classList.remove("selected");
     easyButton.classList.remove("selected");
+    leben = 100;
+    document.getElementById("health").innerHTML = leben;
+    healthBar.style.width = "100%";
 
 }
 
