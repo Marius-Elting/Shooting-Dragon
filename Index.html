@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    Mady by Marius 
+     -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Shooting Dragon</title>
+</head>
+
+<body>
+    <form action="">
+        <div id="gameFrame" class="gFrame">
+            <h1 id="mby">Made by Marius :)</h1>
+            <div id="healthBar">
+                <h1><span id="health"></span>/100 </h1>
+            </div>
+
+            <div class="easy" id="gegner1" onclick="iShoot(this)"></div>
+            <div class="easy" id="gegner2" onclick="iShoot(this)"></div>
+            <div class="easy" id="gegner3" onclick="iShoot(this)"></div>
+            <div class="easy" id="gegner4" onclick="iShoot(this)"></div>
+            <div class="easy" id="gegner5" onclick="iShoot(this)"></div>
+            <div class="medium" id="gegner6" onclick="iShoot(this)"></div>
+            <div class="medium" id="gegner7" onclick="iShoot(this)"></div>
+            <div class="medium" id="gegner8" onclick="iShoot(this)"></div>
+            <div class="hard" id="gegner9" onclick="iShoot(this)"></div>
+            <div class="hard" id="gegner10" onclick="iShoot(this)"></div>
+            <div class="hard" id="gegner11" onclick="iShoot(this)"></div>
+
+        </div>
+    </form>
+    <p style="text-align: center;">
+    <div class="Buttons" id="buttons">
+        <h1 id="allScore"></h1>
+        <h2 id="displayschw"> Bitte wähle eine Schwierigkeit</h2>
+
+        <div class="schwierigkeit">
+            <button onclick="easy()">Easy</button>
+            <button onclick="medium()">Medium</button>
+            <button onclick="hard()">Hard</button>
+        </div>
+
+        <button id="start" onclick="randomGegner()">
+            <h1> Neues Spiel</h1>
+        </button>
+    </div>
+
+    <div id="whilePlay" class="nichtsichtbar">
+        <h2 id="displayschw"></h2>
+        <h1>Dein aktueller Score beträgt:</h1>
+        <h1 id="curScore"></h1>
+        <p>Verbleibende Gegner: (in Arbeit) <span id="verbleibende"></span></p>
+        <button id="resButton" class="nichtsichtbar" onclick="resGame()">
+            <h1>Reset</h1>
+        </button>
+    </div>
+    </p>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
