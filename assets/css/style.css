@@ -31,6 +31,7 @@ body {
     margin: auto;
     position: relative;
     overflow: hidden;
+    cursor: crosshair;
 }
 
 #healthBar {
@@ -238,3 +239,9 @@ button:hover {
     flex-direction: column;
     align-items: center;
 }
+
+#gameFrame h2 {
+    position: absolute;
+    top: 250px;
+    text-align: center;
+    width: 100%;

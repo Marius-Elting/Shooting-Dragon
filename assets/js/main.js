@@ -117,6 +117,7 @@ function randomGegner() {
         document.getElementById("whilePlay").classList.add("sichtbar");
         document.getElementById("eigeneSettings").classList.remove("sichtbar");
         document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
+        document.getElementById("introH2").classList.add("nichtsichtbar");
         // leben = 100;
         // document.getElementById("health").innerHTML = leben;
         // healthBar.style.width = "100%";
@@ -229,7 +230,8 @@ function easy() {
     customGame.classList.remove("selected");
     document.getElementById("eigeneSettings").classList.remove("sichtbar");
     document.getElementById("eigeneSettings").classList.add("nichtsichtbar");
-
+    malvar = 2000;
+    plusvar = 1000;
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
