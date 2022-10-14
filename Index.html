@@ -34,15 +34,18 @@
 
         </div>
     </form>
-    <p style="text-align: center;">
+    <p style="text-align: center;"> </p>
     <div class="Buttons" id="buttons">
         <h1 id="allScore"></h1>
+        <button onclick="anleitung()" id="anleitung">
+            <p>Anleitung</p>
+        </button>
         <h2 id="displayschw"> Bitte wähle eine Schwierigkeit</h2>
 
         <div class="schwierigkeit">
-            <button onclick="easy()">Easy</button>
-            <button onclick="medium()">Medium</button>
-            <button onclick="hard()">Hard</button>
+            <button id="easyButton" onclick="easy()">Easy</button>
+            <button id="medButton" onclick="medium()">Medium</button>
+            <button id="hardButton" onclick="hard()">Hard</button>
         </div>
 
         <button id="start" onclick="randomGegner()">
@@ -59,7 +62,7 @@
             <h1>Reset</h1>
         </button>
     </div>
-    </p>
+
 
     <script src="./assets/js/main.js"></script>
 </body>

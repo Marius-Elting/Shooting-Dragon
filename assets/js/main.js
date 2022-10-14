@@ -1,4 +1,7 @@
 // Made by Marius
+let easyButton = document.getElementById('easyButton');
+let medButton = document.getElementById('medButton');
+let hardButton = document.getElementById('hardButton');
 
 let leben = 100;
 document.getElementById("health").innerHTML = leben;
@@ -95,6 +98,9 @@ function randomGegner() {
         document.getElementById("buttons").classList.remove("sichtbar");
         document.getElementById("whilePlay").classList.remove("nichtsichtbar");
         document.getElementById("whilePlay").classList.add("sichtbar");
+        leben = 100;
+        document.getElementById("health").innerHTML = leben;
+        healthBar.style.width = "100%";
     } else {
         alert("Bitte wähle eine Schwierigkeit!");
     }
@@ -116,6 +122,9 @@ function hardest() {
         document.getElementById("buttons").classList.remove("sichtbar");
         document.getElementById("whilePlay").classList.remove("nichtsichtbar");
         document.getElementById("whilePlay").classList.add("sichtbar");
+        leben = 100;
+        document.getElementById("health").innerHTML = leben;
+        healthBar.style.width = "100%";
     } else {
         alert("Bitte wähle eine Schwierigkeit!");
     }
@@ -137,6 +146,11 @@ function mediums() {
         document.getElementById("buttons").classList.remove("sichtbar");
         document.getElementById("whilePlay").classList.remove("nichtsichtbar");
         document.getElementById("whilePlay").classList.add("sichtbar");
+        leben = 100;
+        document.getElementById("health").innerHTML = leben;
+        healthBar.style.width = "100%";
+
+
     } else {
         alert("Bitte wähle eine Schwierigkeit!");
     }
@@ -207,7 +221,9 @@ function easy() {
     enem10.classList.remove("gegner");
     enem11.classList.remove("gegner");
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Easy";
-
+    easyButton.classList.add("selected");
+    medButton.classList.remove("selected");
+    hardButton.classList.remove("selected");
 
 
 }
@@ -222,6 +238,9 @@ function medium() {
     enem11.classList.remove("gegner");
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Medium";
     document.getElementById("start").setAttribute("onClick", "javascript: mediums();");
+    medButton.classList.add("selected");
+    easyButton.classList.remove("selected");
+    hardButton.classList.remove("selected");
 }
 
 function hard() {
@@ -232,15 +251,12 @@ function hard() {
     document.getElementById("displayschw").innerHTML = "Schwierigkeit: Hard";
     // document.getElementById("start").onclick = "hardest";
     document.getElementById("start").setAttribute("onClick", "javascript: hardest();");
-
+    hardButton.classList.add("selected");
+    medButton.classList.remove("selected");
+    easyButton.classList.remove("selected");
 
 }
 
-
-
-
-
-
-// let llelele = document.getElementById("gegner1");
-
-// console.log(llelele);
+function anleitung() {
+    alert("Töte die Gegner in dem du sie anklickst, doch pass auf sie schießen zurück, halte deshalb deine Leben immer gut im Auge");
+}
