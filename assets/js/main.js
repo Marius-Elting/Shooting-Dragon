@@ -151,7 +151,21 @@ function resGame() {
     easyButton.classList.remove("selected");;
     medButton.classList.remove("selected");;
     hardButton.classList.remove("selected");;
+    customGame.classList.remove("selected");;
     ultraHardButton.classList.remove("selected");;
+    gegnerLVL1Button.classList.remove("selected");
+    gegnerLVL2Button.classList.remove("selected");
+    gegnerLVL3Button.classList.remove("selected");
+    gegnerLVL4Button.classList.remove("selected");
+    shootLVL1Button.classList.remove("selected");
+    shootLVL2Button.classList.remove("selected");
+    shootLVL3Button.classList.remove("selected");
+    shootLVL4Button.classList.remove("selected");
+    spawnLVL1Button.classList.remove("selected");
+    spawnLVL2Button.classList.remove("selected");
+    spawnLVL3Button.classList.remove("selected");
+    spawnLVL4Button.classList.remove("selected");
+    spawnLVL5Button.classList.remove("selected");
     document.getElementById("displayschw").innerHTML = "Bitte wähle eine Schwierigkeit";
     shotDelay = 1000;
 }
@@ -219,7 +233,7 @@ function easy() {
     leben = 100;
     document.getElementById("health").innerHTML = leben;
     healthBar.style.width = "100%";
-    shotDelay = 800;
+    shotDelay = 1000;
 
 }
 
