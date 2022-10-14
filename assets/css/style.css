@@ -55,6 +55,11 @@ body {
     transition: all .5s;
 }
 
+.gegnerSpawnFast {
+    transition: all .1s;
+
+}
+
 .gegner.showing {
     bottom: 0;
 }
@@ -65,31 +70,44 @@ body {
 
 
 #gegner1,
-#genger6 {
+#genger6,
+#gegner18 {
     left: 5px;
 }
 
 #gegner2,
-#gegner7 {
+#gegner7,
+#gegner18 {
     left: 165px;
 }
 
 #gegner3,
-#gegner8 {
+#gegner8,
+#gegner17 {
     left: 325px;
 }
 
-#gegner4 #gegner9 {
+#gegner4,
+#gegner9,
+#gegner13 {
     left: 485px;
 }
 
 #gegner5,
-#gegner10 {
+#gegner10,
+#gegner14 {
     left: 645px;
 }
 
-#gegner11 {
+#gegner11,
+#gegner20 {
     left: 250px
+}
+
+#gegner12,
+#gegner15,
+#gegner16 {
+    left: 100px
 }
 
 
